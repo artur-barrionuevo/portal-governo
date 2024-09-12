@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="portal.governo"
+    >
+
+  <configure zcml:condition="installed AccessControl.security">
+
+    <permission
+        id="portal.governo.secretaria.add"
+        title="portal.governo: Add Secretaria"
+        />
+
+  </configure>
+
+</configure>
