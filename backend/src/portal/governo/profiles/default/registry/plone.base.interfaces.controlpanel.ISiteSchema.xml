@@ -4,6 +4,6 @@
            prefix="plone"
            purge="false"
   >
-    <value key="site_title">Portal de Governo</value>
+    <value key="site_title">Portal de Governo RS</value>
   </records>
 </registry>

@@ -4,6 +4,8 @@
            prefix="plone"
            purge="false"
   >
-    <value key="email_from_name">Portal de Governo</value>
+    <value key="email_from_name">Portal de Governo RS</value>
+    <value key="smtp_host">smtp.google.com</value>
+    <value key="smtp_port">567</value>
   </records>
 </registry>
