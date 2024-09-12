@@ -1,0 +1,60 @@
+{
+  "name": "volto-portal-governo",
+  "version": "1.0.0-alpha.0",
+  "description": "Um novo portal de governo utilizando o Plone",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "author": "Artur Barrionuevo",
+  "homepage": "https://github.com/artur-barrionuevo/volto-portal-governo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:artur-barrionuevo/volto-portal-governo.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha"
+  },
+  "addons": [
+    "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-button-block",
+    "@kitconcept/volto-heading-block",
+    "@kitconcept/volto-separator-block",
+    "@kitconcept/volto-social-blocks",
+    "@kitconcept/volto-carousel-block",
+    "@mbarde/volto-image-crop-widget",
+    "@kitconcept/volto-slider-block",
+    "@kitconcept/volto-light-theme"
+  ],
+  "dependencies": {
+    "@plone/components": "1.7.0",
+    "@kitconcept/volto-slider-block": "6.3.1",
+    "@eeacms/volto-accordion-block": "11.0.1",
+    "@kitconcept/volto-button-block": "3.0.1",
+    "@kitconcept/volto-heading-block": "2.4.0",
+    "@kitconcept/volto-light-theme": "5.0.0",
+    "@kitconcept/volto-carousel-block": "1.1.0",
+    "@kitconcept/volto-separator-block": "4.1.2",
+    "@kitconcept/volto-social-blocks": "1.0.0-alpha.4",
+    "@mbarde/volto-image-crop-widget": "0.5.1"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.1",
+    "release-it": "^17.1.1"
+  }
+}
