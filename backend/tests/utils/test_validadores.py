@@ -9,6 +9,8 @@ import pytest
         ["1@rs.gov.br", True],
         ["foobar@rs.gov.br", True],
         ["bar-foo@rs.gov.br", True],
+        ["bar-foo@casacivil.rs.gov.br", True],
+        ["bar-foo@casa-civil.rs.gov.br", True],
         ["1@rs.gov.br.br", False],
         ["foobar@rs.gov.br.br", False],
         ["bar-foo@rs.gov.br.br", False],

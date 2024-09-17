@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Dexterity FTI"
+        name="Pessoa"
+        i18n:domain="portal.governo"
+>
+
+  <!-- Basic properties -->
+  <property name="title"
+            i18n:translate=""
+  >Pessoa</property>
+  <property name="description"
+            i18n:translate=""
+  >Uma Pessoa dentro da estrutura de governo</property>
+
+  <property name="allow_discussion">False</property>
+  <property name="factory">Pessoa</property>
+
+  <!-- Hierarchy control -->
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types" />
+  <property name="global_allow">True</property>
+
+  <!-- Schema, class and security -->
+  <property name="add_permission">portal.governo.pessoa.add</property>
+  <property name="klass">portal.governo.content.pessoa.Pessoa</property>
+  <property name="schema">portal.governo.content.pessoa.IPessoa</property>
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors"
+            purge="false"
+  >
+    <element value="plone.basic" />
+    <element value="plone.namefromtitle" />
+    <element value="plone.shortname" />
+    <element value="plone.excludefromnavigation" />
+    <element value="portal.governo.behavior.contato" />
+    <element value="portal.governo.behavior.endereco" />
+    <element value="plone.leadimage" />
+    <element value="plone.navigationroot" />
+    <element value="plone.versioning" />
+  </property>
+
+</object>

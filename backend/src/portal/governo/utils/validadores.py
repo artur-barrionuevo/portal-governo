@@ -3,7 +3,8 @@ import re
 
 def is_valid_email(value: str) -> bool:
     """Validar se o email é @rs.gov.br."""
-    return value.endswith("@rs.gov.br") if value else True
+    pattern = re.compile(r".*@([a-z0-9-]+\.)*rs\.gov\.br$")
+    return True if re.match(pattern, value) else False
 
 
 def is_valid_telefone(value: str) -> bool:

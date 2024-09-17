@@ -25,4 +25,19 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="portal.governo:default"
+      source="1002"
+      destination="1003"
+      >
+    <genericsetup:upgradeDepends
+        title="Seta permissão `portal.governo: Add Pessoa`"
+        import_steps="rolemap"
+        />
+    <genericsetup:upgradeDepends
+        title="Adiciona o tipo Pessoa"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>

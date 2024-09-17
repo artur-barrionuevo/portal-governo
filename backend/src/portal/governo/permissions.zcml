@@ -11,6 +11,11 @@
         title="portal.governo: Add Secretaria"
         />
 
+    <permission
+        id="portal.governo.pessoa.add"
+        title="portal.governo: Add Pessoa"
+        />
+
   </configure>
 
 </configure>

@@ -7,5 +7,13 @@
       <role name="Manager" />
       <role name="Site Administrator" />
     </permission>
+    <permission acquire="False"
+                name="portal.governo: Add Pessoa"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Editor" />
+      <role name="Contributor" />
+    </permission>
   </permissions>
 </rolemap>
