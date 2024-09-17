@@ -6,12 +6,29 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 const SecretariaView = (props) => {
   const { content, location } = props;
-  const { telefone, email } = content;
+  const { telefone, email, endereco, complemento, estado, cep, cidade } = content;
   const path = getBaseUrl(location?.pathname || '');
 
   return (
     <Container id="page-document" className="view-wrapper secretaria-view">
       <RenderBlocks {...props} path={path} />
+      <Container className="endereco">
+        <Container className="endereco">
+          <span>{endereco}</span>
+        </Container>
+        <Container className="complemento">
+          <span>{complemento}</span>
+        </Container>
+        <Container className="cidade">
+          <span>{cidade}</span>
+        </Container>
+        <Container className="estado">
+          <span>{estado.token}</span>
+        </Container>
+        <Container className="cep">
+          <span>{cep}</span>
+        </Container>
+      </Container>
       <Container className="contato">
         <Container className="telefone">
           <span>Telefone</span>: <span>{telefone}</span>
