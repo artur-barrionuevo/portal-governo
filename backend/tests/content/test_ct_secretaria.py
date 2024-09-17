@@ -26,6 +26,13 @@ def secretaria_payload() -> dict:
     }
 
 
+@pytest.fixture()
+def content(portal, secretaria_payload) -> Secretaria:
+    with api.env.adopt_roles(["Manager"]):
+        content = api.content.create(container=portal, **secretaria_payload)
+    return content
+
+
 class TestSecretaria:
     @pytest.fixture(autouse=True)
     def _setup(self, get_fti, portal):
@@ -53,6 +60,8 @@ class TestSecretaria:
             "plone.constraintypes",
             "plone.navigationroot",
             "volto.preview_image",
+            "portal.governo.behavior.contato",
+            "portal.governo.behavior.endereco",
         ],
     )
     def test_has_behavior(self, get_behaviors, behavior):
@@ -79,18 +88,19 @@ class TestSecretaria:
                 with pytest.raises(Unauthorized):
                     api.content.create(container=self.portal, **secretaria_payload)
 
-    def test_create_modified(self, secretaria_payload):
-        usr = api.user.get_current()
-        
-        with api.env.adopt_roles(["Manager"]):
-            content = api.content.create(
-                container=self.portal, **secretaria_payload
+    @pytest.mark.parametrize(
+        "role,allowed",
+        [
+            ["Manager", False],
+            ["Site Administrator", False],
+            ["Editor", False],
+            ["Contributor", False],
+        ],
+    )
+    def test_subscriber_remove_permission(self, content, role, allowed):
+        current_user = api.user.get_current()
+        with api.env.adopt_roles([role]):
+            can_add = api.user.has_permission(
+                "portal.governo: Add Secretaria", user=current_user, obj=content
             )
-            
-        assert api.user.has_permission('portal.governo: Add Secretaria', user=usr, obj=content) is False
-            
-            #assert content.portal_type == CONTENT_TYPE
-            #assert isinstance(content, Secretaria)
-            #else:
-                #with pytest.raises(Unauthorized):
-                #    api.content.create(container=self.portal, **secretaria_payload)
+            assert can_add is allowed

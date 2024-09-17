@@ -3,17 +3,26 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     >
 
-  <!-- Example upgrade step
   <genericsetup:upgradeSteps
       profile="portal.governo:default"
       source="1000"
       destination="1001"
       >
     <genericsetup:upgradeDepends
-        title="Update registry value"
-        import_steps="plone.app.registry"
+        title="Altera comportamentos do tipo Secretaria"
+        import_steps="typeinfo"
         />
   </genericsetup:upgradeSteps>
-  -->
+
+  <genericsetup:upgradeSteps
+      profile="portal.governo:default"
+      source="1001"
+      destination="1002"
+      >
+    <genericsetup:upgradeDepends
+        title="Altera comportamentos do tipo Plone Site"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
 
 </configure>
