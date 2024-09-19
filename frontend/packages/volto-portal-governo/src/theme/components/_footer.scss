@@ -1,0 +1,16 @@
+#footer {
+  .footer {
+    .footer-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 150px;
+      gap: 25px;
+      > div {
+        min-width: 33%;
+      }
+      .footer-info {
+        text-align: left;
+      }
+    }
+  }
+}

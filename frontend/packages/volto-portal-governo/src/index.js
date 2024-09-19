@@ -8,6 +8,7 @@ const applyConfig = (config) => {
     isMultilingual: false,
     supportedLanguages: ['pt-br'],
     defaultLanguage: 'pt-br',
+    contextualVocabularies: ['portal.governo.vocabulary.gestores'],
   };
   // Views
   config.views.contentTypesViews = {
