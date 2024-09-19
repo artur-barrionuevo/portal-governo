@@ -37,6 +37,7 @@ const applyConfig = (config) => {
     icon: gestorSVG,
     edit: GestorEdit,
     view: GestorView,
+    sidebarTab: 1,
   };
 
   return config;
