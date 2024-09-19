@@ -13,6 +13,10 @@ import secretariaSVG from '@plone/volto/icons/home.svg';
 import PessoaView from './components/Views/PessoaView';
 import SecretariaView from './components/Views/SecretariaView';
 
+// Reducers
+import defaultReducers from '@plone/volto/reducers';
+import secretarias from './reducers/secretarias/secretarias';
+
 const applyConfig = (config) => {
   config.settings = {
     ...config.settings,
@@ -55,6 +59,12 @@ const applyConfig = (config) => {
     sidebarTab: 1,
   };
 
+  // Reducers
+  const localReducers = {
+    ...defaultReducers,
+    secretarias,
+  };
+  config.addonReducers = { ...config.addonReducers, ...localReducers };
   return config;
 };
 
