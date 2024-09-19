@@ -4,6 +4,11 @@ import GestorEdit from './components/Blocks/GestorBlock/Edit';
 import GestorView from './components/Blocks/GestorBlock/View';
 import gestorSVG from '@plone/volto/icons/user.svg';
 
+/// Secretarias
+import SecretariasBlockEdit from './components/Blocks/SecretariasBlock/Edit';
+import SecretariasBlockView from './components/Blocks/SecretariasBlock/View';
+import secretariaSVG from '@plone/volto/icons/home.svg';
+
 // Views
 import PessoaView from './components/Views/PessoaView';
 import SecretariaView from './components/Views/SecretariaView';
@@ -37,6 +42,16 @@ const applyConfig = (config) => {
     icon: gestorSVG,
     edit: GestorEdit,
     view: GestorView,
+    sidebarTab: 1,
+  };
+  /// Bloco Secretarias
+  config.blocks.blocksConfig.secretariasBlock = {
+    id: 'secretariasBlock',
+    title: 'Listagem de Secretarias',
+    group: 'procergs',
+    icon: secretariaSVG,
+    edit: SecretariasBlockEdit,
+    view: SecretariasBlockView,
     sidebarTab: 1,
   };
 

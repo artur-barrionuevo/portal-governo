@@ -5,10 +5,18 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language: de\n"
+"Language: \n"
 "Language-Team: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Cabeçalho"
+#: components/Blocks/SecretariasBlock/schema
+msgid "Cabeçalho"
+msgstr ""
 
+#. Default: "Secretarias"
+#: components/Blocks/SecretariasBlock/schema
+msgid "Secretarias"
+msgstr ""
