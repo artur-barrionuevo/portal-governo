@@ -2,6 +2,10 @@
 
   <!-- Serializers -->
 
+  <!-- Serializador para o tipo pessoa -->
+  <adapter factory=".pessoa.PessoaJSONSerializer" />
+
+  <!-- Padrão para sumário-->
   <utility
       factory=".summary.JSONSummarySerializerMetadata"
       name="portal.governo.summary_serializer_metadata"
