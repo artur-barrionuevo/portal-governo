@@ -1,7 +1,8 @@
 import React from 'react';
+import View from './View';
 
 const Edit = (props) => {
-  return <div>Olá Mundo! (Edição)</div>;
+  return <View {...props} />;
 };
 
 export default Edit;

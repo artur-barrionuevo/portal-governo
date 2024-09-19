@@ -23,10 +23,17 @@ const applyConfig = (config) => {
     Secretaria: SecretariaView,
   };
 
+  // Blocos
+  /// Grupos de Blocos
+  config.blocks.groupBlocksOrder = [
+    ...config.blocks.groupBlocksOrder,
+    { id: 'procergs', title: 'Procergs' },
+  ];
+  /// Bloco Gestor
   config.blocks.blocksConfig.gestorBlock = {
     id: 'gestorBlock',
     title: 'Gestor',
-    group: 'common',
+    group: 'procergs',
     icon: gestorSVG,
     edit: GestorEdit,
     view: GestorView,
